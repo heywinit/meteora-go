@@ -326,3 +326,38 @@ const (
 	U1024 BitmapType = iota
 	U512
 )
+
+// export interface SeedLiquidityResponse
+
+type Clock struct {
+	slot                big.Int
+	epochStartTimestamp big.Int
+	epoch               big.Int
+	leaderScheduleEpoch big.Int
+	unixTimestamp       big.Int
+}
+
+type ClockLayout struct {
+	Slot                uint64
+	EpochStartTimestamp int64
+	Epoch               uint64
+	LeaderScheduleEpoch uint64
+	UnixTimestamp       int64
+}
+
+type PairStatus int
+
+const (
+	Enabled PairStatus = iota
+	Disabled
+)
+
+// export interface PairLockInfo
+
+type PositionLockInfo struct {
+	positionAddress  solana.PublicKey
+	owner            solana.PublicKey
+	tokenXAmount     string
+	tokenYAmount     string
+	lockReleasePoint int
+}
