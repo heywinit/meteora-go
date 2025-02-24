@@ -6,6 +6,27 @@ import (
 	"github.com/gagliardetto/solana-go"
 )
 
+type Decimal struct {
+	Value string 
+}
+
+// ClmmProgram represents the DLMM Solana program.
+type ClmmProgram struct {
+	ProgramID solana.PublicKey
+}
+
+// LbPair represents the on-chain liquidity bin pair.
+type LbPair struct {
+	TokenX solana.PublicKey
+	TokenY solana.PublicKey
+}
+
+// LbPairAccount is a wrapper for the account.
+type LbPairAccount struct {
+	PublicKey solana.PublicKey
+	Account   LbPair
+}
+
 // FeeInfo defines fee-related parameters.
 type FeeInfo struct {
 	BaseFeeRatePercentage string
@@ -34,6 +55,14 @@ type LbPosition struct {
 	Version PositionVersion
 }
 
+type PositionInfo struct {
+	PublicKey solana.PublicKey
+	LBPair LbPair
+	TokenX TokenReserve
+	TokenY TokenReserve
+	LBPairPositionsData []LbPosition
+}
+
 type PositionData struct {
 	TotalXAmount string
 	TotalYAmount string
@@ -60,6 +89,21 @@ type PositionBinData struct {
 	PositionLiquidity string;
 	PositionXAmount string;
 	PositionYAmount string;
+}
+
+type EmissionRate struct {
+	RewardOne Decimal
+	RewardTwo Decimal
+}
+
+type SwapFee struct {
+	FeeX big.Int
+	FeeY big.Int
+}
+
+type LMRewards struct {
+	RewardOne Decimal
+	RewardTwo Decimal
 }
 
 // StrategyType Enum
