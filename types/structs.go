@@ -315,7 +315,10 @@ type SwapExactOutParams struct {
 	binArraysPubkey []solana.PublicKey
 }
 
-// type GetOrCreateATAResponse struct{
+type GetOrCreateATAResponse struct {
+	ataPubKey solana.PublicKey
+	ix        *solana.Instruction
+}
 
 type BitmapType int
 
