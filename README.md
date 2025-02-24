@@ -15,16 +15,7 @@ go get github.com/byedeep/meteora-go
 
 ## Project Structure
 ```
-meteora-go/
-│── clmm/           # Dynamic CLMM logic
-│── client/         # Solana client
-│── utils/          # Helpers
-│── types/          # Core types
-│── internal/       # Internal utilities (not exported)
-│── examples/       # Usage examples
-│── meteora.go      # Main entry file
-│── go.mod
-│── README.md
+TODO: UPDATE
 ```
 
 ## Quick Start
