@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Add Upstream Remote
-        run: git remote add upstream https://github.com/axiom-svgu/waqt.git
+        run: git remote add upstream https://github.com/axiom-svgu/meteora-go.git
 
       - name: Fetch Upstream Changes
         run: git fetch upstream
